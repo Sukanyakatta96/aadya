@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const thankYouMessage = document.getElementById('thankYouMessage');
 
   // Default brochure path (always downloads this one)
-  const brochurePath = '/asset/files/brochure.pdf';
+  const brochurePath = 'asset/files/brochure.pdf';
 
   // Open modal (prevent link redirect)
   if (openBtn) {
@@ -449,7 +449,7 @@ function downloadBrochure() {
     addMessage("📄 Downloading our villa brochure...", true);
     try {
         const link = document.createElement('a');
-        link.href = 'assets/villa-brochure.pdf';
+        link.href = 'asset/files/brochure.pdf';
         link.download = 'Aadya-Villa-Brochure.pdf';
         link.style.display = "none";
         document.body.appendChild(link);
