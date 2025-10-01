@@ -207,49 +207,22 @@ header.scrolled .bar {
     background-color: var(--dark); /* Dark bars when scrolled */
 }
 
+/* Hero section with video background */
 .hero {
     position: relative;
-    width: 100%;
-    height: 100vh;        /* Full viewport height */
-    overflow: hidden;
+    height: 100vh;            /* Full viewport height */
+    overflow: hidden;         /* Hide overflow */
 }
-
-/* Common video styling */
 .hero-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    display: block;      /* Ensure video is visible by default */
+    object-fit: cover;        /* Cover the container */
+    z-index: -2;              /* Behind overlay */
 }
 
-/* Hide mobile video by default */
-.hero-video-mobile {
-    display: none;
-}
-
-/* Mobile: show mobile video, hide PC video */
-@media (max-width: 767px) {
-    #homepageVideo {
-        display: none !important;           /* Hide PC video */
-    }
-    #homepageVideoMobile {
-        display: block !important;          /* Show mobile video */
-    }
-}
-
-/* Tablet: show PC video */
-@media (min-width: 768px) and (max-width: 1024px) {
-    #homepageVideo {
-        display: block !important;          /* Show PC video */
-    }
-    #homepageVideoMobile {
-        display: none !important;           /* Hide mobile video */
-    }
-}
 
 /* About section */
 .about {
@@ -1481,6 +1454,27 @@ body {
         color: var(--dark);
     }
     
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    
     /* About Section */
     .about-content {
         grid-template-columns: 1fr;
@@ -1798,3 +1792,31 @@ body {
     }
 }
 
+
+.hero-video {
+  display: none; /* Hide all videos by default */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Desktop & Laptop (1025px and above) */
+@media (min-width: 1025px) {
+  .desktop-video {
+    display: block;
+  }
+}
+
+/* Tablet (481px – 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .tablet-video {
+    display: block;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .mobile-video {
+    display: block;
+  }
+}
