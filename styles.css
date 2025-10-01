@@ -1806,13 +1806,6 @@ body {
   object-fit: cover;
 }
 
-/* Desktop & Laptop (1025px and above) */
-@media (min-width: 1025px) {
-  .desktop-video {
-    display: block;
-  }
-}
-
 /* Tablet (481px – 1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
   .tablet-video {
